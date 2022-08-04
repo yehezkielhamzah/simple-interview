@@ -21,4 +21,6 @@ ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
 # Start the process.
+RUN gem install nokogiri --platform=ruby
+RUN bundle config set force_ruby_platform true
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
